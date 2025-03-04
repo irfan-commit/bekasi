@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+/* Header & Footer */
+header, footer {
+    background-color: #00a2c6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navbar */
+nav {
+    background-color: #00a2c6;
+    padding: 10px 20px;
+}
+
+nav a {
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+nav a:hover {
+    font-weight: bold;
+    background-color: #008bb5;
+    border-radius: 5px;
+}
+
+/* Profile */
+.profile header {
+    text-align: center;
+}
+
+.profile img {
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+/* Featured Image */
+.featured-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+/* Card */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    background: white;
+    max-width: none; /* Membatasi ukuran card agar tidak terlalu besar */
+    width: 100%; /* Supaya Fleksibel */
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Jarak antar card lebih besar */
+}
+
+
+/* Header */
+.jumbotron {
+    font-size: 20px;
+    padding: 60px 20px;
+    background-color: #AA60C8;
+    text-align: center;
+    color: white;
+}
+
+/* Layout */
+main {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Content utama (Artikel Sejarah) */
+#content {
+    flex: 3;
+    order: 1;
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+aside {
+    flex: 1;
+    order: 2;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-left: 20px;
+    max-width: 400px;/* Agar tetap proporsional */
+}
+
+/* Animasi Fade-in */
+.card, aside {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+
+/* Perangkat dengan lebar layar 768px dan di bawahnya */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    aside {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+        order: -1; /* Memindahkan aside ke atas */
+        text-align: center;
+    }
+}
